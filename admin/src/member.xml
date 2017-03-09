@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="member" namespace="/member" extends="json-default">
+		<action name="memberAction_*" class="com.zhiyuan.action.MemberAction" method="{1}">
+		<result name="loadok">/admin-add.jsp</result>
+		<result name="loadok2">/admin-update.jsp</result>
+		<result name="addok" type="chain">memberAction_loadAllMember</result>
+		<result name="loadallok">/admin-list.jsp</result>
+		<result name="loadoneok">/admin-update.jsp</result>
+		<result name="updateok" type="chain">memberAction_loadAllMember</result>
+		<result name="loginok">/index.jsp</result>
+		<result name="success">/index.jsp</result>
+		<result name="loginfail">/login.jsp</result>
+		<result name="welcome">/welcome.jsp</result>
+		<result name="loadmenuok" type="json">
+				<param name="root">potents</param>
+			</result>
+		<result name="logout">/login.jsp</result>
+		</action>
+		</package>
+	
+</struts>    

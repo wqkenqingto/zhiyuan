@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="rbac" namespace="/rbac" extends="struts-default">
+		<action name="rbacAction_*" class="com.zhiyuan.action.RbacAction" method="{1}">
+		<result name="addok" type="chain">rbacAction_loadAllRole</result>
+		<result name="loadok">/admin-role.jsp</result>
+		<result name="loadoneok">/admin-role-update.jsp</result>
+		<result name="updateok" type="chain">rbacAction_loadAllRole</result>
+		</action>
+		</package>
+	
+</struts>    

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="network" namespace="/network" extends="struts-default">
+		<action name="netWorkAction_*" class="com.zhiyuan.action.NetWorkAction" method="{1}">
+			<result name="loadnetok">/netlist.jsp</result>
+			<result name="loadbynid">/netinfo.jsp</result>
+		</action>
+	</package>
+	
+</struts>    

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.zhiyuan.pojo">
+	<class name="News" table="tb_news">
+		<id name="nid" column="nid">
+			<generator class="native"/>
+		</id>
+		<property name="title" column="title"></property>
+		<property name="type" column="type"></property>
+		<property name="updtime" column="updtime"></property>
+		<property name="state" column="state"></property>
+		<property name="shortName" column="shorName"></property>
+		<property name="keyWord" column="keyWord"></property>
+		<property name="style" column="style"></property>
+		<property name="writer" column="writer"></property>
+		<property name="content" column="content"></property>
+	</class>
+</hibernate-mapping>

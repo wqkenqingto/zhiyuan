@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.zhiyuan.pojo">
+	<class name="NetWork" table="tb_network">
+		<id name="nid" column="nid">
+			<generator class="native"></generator>
+		</id>
+		<property name="naddress" column="naddress"></property>
+		<property name="nname" column="nname"></property>
+		<property name="contact" column="contact"></property>
+		<property name="cityId" column="cityId"></property>
+		<property name="owner" column="owner"></property>
+		<set name="sorders"  table="tb_ordnet">
+		<key column="nid"></key>
+		<many-to-many column="onumber"  class="Order"/>
+		</set>
+	</class>
+</hibernate-mapping>

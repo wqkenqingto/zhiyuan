@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.zhiyuan.pojo">
+	<class name="Order" table="tb_order">
+		<id name="onumber" column="onumber">
+		
+			<!-- <column name="id"></column>
+			 <generator class="foreign">
+				<param name="property">sender</param>
+				<param name="property">reciever</param>
+			</generator>-->
+			 <generator class="native" />  
+		</id>
+		<property name="wayNum" column="wayNum"></property>
+		<property name="date" column="date"></property>
+		<property name="goodsName" column="goodsName"></property>
+		<property name="remarks" column="remarks"></property>
+		<property name="weight" column="weight"></property>
+		<property name="sumTotal" column="sumTotal"></property>
+		<one-to-one name="complaint" class="Complaint" cascade="save-update,persist"></one-to-one>
+		<many-to-one name="sender" column="sid" cascade="save-update,persist"  not-found="exception"></many-to-one>
+		<many-to-one name="reciever" column="rid" cascade="save-update,persist"	not-found="exception"></many-to-one>
+		<join table="tb_ordnet"  >
+        <key column="onumber" />
+       <many-to-one name="netWork" column="nid"  insert="true" update="true"  not-found="exception"/>
+  </join>
+		
+	</class>
+</hibernate-mapping>
